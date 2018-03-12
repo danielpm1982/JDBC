@@ -1,0 +1,1 @@
+Must add the jee servlet/jsp/jstl jars (if web project) and mysqlConnectorJava jar to the classpath of the project for the code to run. If it is not in the project already, download it.
