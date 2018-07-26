@@ -1,0 +1,31 @@
+CREATE TABLE `scheme1`.`client` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(45) NULL,
+  `salary` DECIMAL(9,2) NULL,
+  `birthDate` DATETIME NULL,
+  `registeredIn` DATETIME NULL,
+  `departmentNo` INT NULL,
+  PRIMARY KEY (`id`));
+
+CREATE TABLE `scheme1`.`department` (
+  `departmentNo` INT NOT NULL,
+  `nameDep` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`departmentNo`));
+
+ALTER TABLE `scheme1`.`client` 
+ADD INDEX `departmentNo_idx` (`departmentNo` ASC);
+ALTER TABLE `scheme1`.`client` 
+ADD CONSTRAINT `departmentNo`
+  FOREIGN KEY (`departmentNo`)
+  REFERENCES `scheme1`.`department` (`departmentNo`)
+  ON DELETE SET NULL
+  ON UPDATE SET NULL;
+
+INSERT INTO `scheme1`.`department` (`departmentNo`, `nameDep`) VALUES ('1', 'department1');
+INSERT INTO `scheme1`.`department` (`departmentNo`, `nameDep`) VALUES ('2', 'department2');
+INSERT INTO `scheme1`.`department` (`departmentNo`, `nameDep`) VALUES ('3', 'department3');
+
+INSERT INTO `scheme1`.`client` (`id`, `name`, `salary`, `birthDate`, `registeredIn`, `departmentNo`) VALUES ('1', 'client1', '50000.5', '1990-02-01 16:00:00', '2015-01-01 12:00:00', '3');
+INSERT INTO `scheme1`.`client` (`id`, `name`, `salary`, `birthDate`, `registeredIn`, `departmentNo`) VALUES ('2', 'client2', '1500.9', '1978-05-01 21:00:00', '2000-01-01 12:00:00', '2');
+INSERT INTO `scheme1`.`client` (`id`, `name`, `salary`, `birthDate`, `registeredIn`, `departmentNo`) VALUES ('3', 'client3', '900.00', '1980-01-01 17:30:00', '2016-01-01 12:00:00', '1');
+
