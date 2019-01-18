@@ -1,1 +1,1 @@
-This Repository includes basic JAVA SE Console and Web JPA Projects. Must add the JEE servlet/jsp/jstl jars (if web project) and MysqlConnectorJava jar to the classpath of the project for the code to run. If it is not in the project already, download it. JAVA8+ compatible.
+This Repository includes basic JAVA SE Console and Web JDBC Projects. Must add the JEE servlet/jsp/jstl jars (if web project) and MysqlConnectorJava jar to the classpath of the project for the code to run. If it is not in the project already, download it. JAVA8+ compatible.
